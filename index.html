@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sorting</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="app.js"></script>
+
+    
+    <script>
+        var jsonData = [
+            {"name": "Alice", "major": "CIT", "midterm": 78, "final": 87},
+            {"name": "Aaron", "major": "CIT", "midterm": 68, "final": 81},
+            {"name": "Abbie", "major": "BUS", "midterm": 75, "final": 87},
+            {"name": "Abner", "major": "CIT", "midterm": 85, "final": 77},
+            {"name": "Agnes", "major": "CIT", "midterm": 98, "final": 77},
+            {"name": "Alfie", "major": "BUS", "midterm": 53, "final": 61},
+            {"name": "Alisa", "major": "BUS", "midterm": 93, "final": 92},
+            {"name": "Alvin", "major": "BUS", "midterm": 88, "final": 56},
+            {"name": "Angie", "major": "CIT", "midterm": 79, "final": 64},
+            {"name": "Artie", "major": "CIT", "midterm": 89, "final": 80},
+            {"name": "Audry", "major": "CIT", "midterm": 85, "final": 70},
+            {"name": "Armin", "major": "BUS", "midterm": 73, "final": 77},
+            {"name": "April", "major": "CIT", "midterm": 74, "final": 70},
+            {"name": "Butch", "major": "CIT", "midterm": 40, "final": 82},
+            {"name": "Chloe", "major": "CIT", "midterm": 70, "final": 93},
+            {"name": "Chuck", "major": "BUS", "midterm": 80, "final": 54},
+            {"name": "Darla", "major": "BUS", "midterm": 88, "final": 61},
+            {"name": "David", "major": "CIT", "midterm": 99, "final": 80},
+            {"name": "Ellen", "major": "CIT", "midterm": 71, "final": 77},
+            {"name": "Eldon", "major": "CIT", "midterm": 98, "final": 99}
+            
+        ];
+    </script>
+</head>
+<body>
+
+<div>
+    <button id="citButton">CIT Majors</button>
+    <button id="busButton">Business Majors</button>
+</div>
+
+<table id="studentTable">
+    var source = document.getElementById('text-template').innerHTML;
+	var template = Handlebars.compile(source);
+	var html = template(data);
+	document.getElementById('result').innerHTML = html;
+</table>
+
+<script id="studentTemplate" type="text/x-handlebars-template">
+    {{#each students}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{major}}</td>
+            <td>{{midterm}}</td>
+            <td>{{final}}</td>
+           
+        </tr>
+    {{/each}}
+</script>
+
+</body>
+</html>
